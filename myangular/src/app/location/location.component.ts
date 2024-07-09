@@ -8,8 +8,8 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './location.component.html',
   styleUrl: './location.component.css'
 })
-export class LocationComponent implements OnInit{
-  locations:any;
+export class LocationComponent implements OnInit {
+  locations: any;
 
   constructor(
     private locationService: LocationService,
@@ -20,11 +20,28 @@ export class LocationComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    
-    this.locations=this.locationService.getAllLocation();
+
+    this.locations = this.locationService.getAllLocation();
   }
 
-  
+  deleteLocation(id: string) {
+    this.locationService.deleteLocation(id)
+      .subscribe({
+        next: res => {
+          this.locations = this.locationService.getAllLocation();
+          this.router.navigate(['location']);
+        },
+        error: error => {
+          console.log(error);
+
+        }
+
+      });
+
+  }
+
+
+
 
 
 

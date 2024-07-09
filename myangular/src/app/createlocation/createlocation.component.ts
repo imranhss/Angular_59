@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationService } from '../location/location.service';
-import { Router } from '@angular/router';
+import { Route, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Location } from '../location/location.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -20,7 +20,8 @@ export class CreatelocationComponent implements OnInit {
     private locationService: LocationService,
     private router: Router,
     private httpClient: HttpClient,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    
   ) {
 
   }
@@ -34,8 +35,8 @@ export class CreatelocationComponent implements OnInit {
       state: [''],
       photo: [''],
       availableUnits: [''],
-      wifi: [''],
-      laundry: ['']
+      wifi: [false],
+      laundry: [false]
 
 
     }
@@ -55,18 +56,23 @@ export class CreatelocationComponent implements OnInit {
     this.location.wifi = this.formValue.value.wifi;
     this.location.laundry = this.formValue.value.laundry;
 
+    
     this.locationService.createLocation(this.location)
       .subscribe({
-        next: ((value: any) => {
-          console.log(value);
-          this.formValue.reset();
-        }
-        ),
-        error: (error: any) => {
-          console.log(error);
-        }
+          next: res=>
+          {
+            console.log(res);
+            this.formValue.reset();
+            this.router.navigate(['/location']);
+          },
 
-      })
+          error: error=>
+          {
+            console.log(error);
+          }
+
+        });
+
   }
 
 }
