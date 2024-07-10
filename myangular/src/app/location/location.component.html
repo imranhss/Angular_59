@@ -1,31 +1,34 @@
-
-
 <div class="container">
-<table class="table table-striped">
+    <table class="table table-striped">
 
-    <tr>
-        <th>Name</th>
-        <th>City</th>
-        <th>State</th>
-        <th>Unit</th>
-        <th>Action</th>
-    </tr>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Unit</th>
+                <th>Action</th>
+            </tr>
+        </thead>
 
-    <tr *ngFor="let location of locations |async">
-        <td>{{location.name}}</td>
-        <td>{{location.city}}</td>
-        <td>{{location.state}}</td>
-        <td>{{location.availableUnits}}</td>
-        <td>
-            <button  class="btn btn-warning" >Edit</button>
-            <button  class="btn btn-danger" (click)="deleteLocation(location.id)">Delete</button>
+        <tbody>
+            <tr *ngFor="let location of locations |async">
+                <td>{{location.name}}</td>
+                <td>{{location.city}}</td>
+                <td>{{location.state}}</td>
+                <td>{{location.availableUnits}}</td>
+                <td>
+                    <button class="btn btn-warning m-1 p-1" (click)="updateLocation(location.id)">Edit</button>
+                    <button class="btn btn-danger m-1 p-1" (click)="deleteLocation(location.id)">Delete</button>
 
-        </td>
+                </td>
 
-    </tr>
+            </tr>
+
+        </tbody>
 
 
 
-</table>
+    </table>
 
 </div>

@@ -41,6 +41,11 @@ export class LocationComponent implements OnInit {
   }
 
 
+  updateLocation(id:string){
+    this.router.navigate(['updatelocation',id]);
+  }
+
+
 
 
 
