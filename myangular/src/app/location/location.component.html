@@ -7,6 +7,8 @@
                 <th>City</th>
                 <th>State</th>
                 <th>Unit</th>
+                <th>Photo</th>
+
                 <th>Action</th>
             </tr>
         </thead>
@@ -17,6 +19,8 @@
                 <td>{{location.city}}</td>
                 <td>{{location.state}}</td>
                 <td>{{location.availableUnits}}</td>
+                <td><img [src]="location.photo" alt="{{location.name}}" style="width: 50px; height: auto;"></td>
+
                 <td>
                     <button class="btn btn-warning m-1 p-1" (click)="updateLocation(location.id)">Edit</button>
                     <button class="btn btn-danger m-1 p-1" (click)="deleteLocation(location.id)">Delete</button>

@@ -30,5 +30,20 @@
       "wifi": false,
       "laundry": false
     }
+  ],
+
+  "students":[
+
+    {
+      "id":1,
+      "name":"Raju",
+      "email": "raju@gmail.com",
+      "cellNo":"123456789",
+      "location": {
+        "id": "0"
+      }
+    }
+
   ]
+
 }
