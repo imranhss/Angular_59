@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentserviceService } from '../studentservice.service';
 import { LocationService } from '../../location/location.service';
+import { error } from 'console';
 
 @Component({
   selector: 'app-viewstudent',
@@ -9,17 +10,54 @@ import { LocationService } from '../../location/location.service';
 })
 export class ViewstudentComponent implements OnInit {
   students: any;
-  locations:any;
+  locations: any;
 
   constructor(
     private service: StudentserviceService,
-    private locationService:LocationService,
+    private locationService: LocationService,
 
   ) { }
 
   ngOnInit(): void {
-   // this.locations=this.locationService.getAllLocation();
-    this.students=this.service.viewAllStudent();
+    this.loadStudents();
+
+
+    this.locationService.getAllLocation().subscribe(locations => {
+      this.locations = locations;
+    });
+
+
   }
+
+
+  loadStudents() {
+    this.service.viewAllStudent().subscribe(
+
+      {
+
+        next: students => {
+          this.students = students
+        },
+        error: error => {
+          console.error('Error fetching students', error);
+
+        }
+      }
+
+
+    );
+  }
+
+  getLocationName(locationId: string): string {
+    if (locationId) {
+      const location = this.locations.find(
+        (loc: { id: string; }) => loc.id === locationId
+      );
+      return location ? location.name : 'Unknown';
+    }
+    return 'Unknown';
+  }
+
+
 
 }
