@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { StudentserviceService } from '../studentservice.service';
 import { LocationService } from '../../location/location.service';
 import { error } from 'console';
+import { StudentModel } from '../student.model';
+import { Location } from '../../location/location.model';
+import { forkJoin } from 'rxjs';
+import { runInThisContext } from 'vm';
 
 @Component({
   selector: 'app-viewstudent',
@@ -9,55 +13,35 @@ import { error } from 'console';
   styleUrl: './viewstudent.component.css'
 })
 export class ViewstudentComponent implements OnInit {
+
+  
   students: any;
   locations: any;
 
   constructor(
-    private service: StudentserviceService,
+    private studentService: StudentserviceService,
     private locationService: LocationService,
 
   ) { }
 
+
+
+  
+
   ngOnInit(): void {
-    this.loadStudents();
-
-
-    this.locationService.getAllLocation().subscribe(locations => {
-      this.locations = locations;
-    });
-
-
+      this.locations=this.locationService.getLocationForStudent();
+      this.students=this.studentService.viewAllStudent();
   }
 
+  
 
-  loadStudents() {
-    this.service.viewAllStudent().subscribe(
-
-      {
-
-        next: students => {
-          this.students = students
-        },
-        error: error => {
-          console.error('Error fetching students', error);
-
-        }
-      }
+  
 
 
-    );
-  }
 
-  getLocationName(locationId: string): string {
-    if (locationId) {
-      const location = this.locations.find(
-        (loc: { id: string; }) => loc.id === locationId
-      );
-      return location ? location.name : 'Unknown';
-    }
-    return 'Unknown';
-  }
-
-
+  
 
 }
+
+
+

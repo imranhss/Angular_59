@@ -31,19 +31,45 @@
       "laundry": false
     }
   ],
-
-  "students":[
-
+  "students": [
     {
-      "id":1,
-      "name":"Raju",
+      "id": 1,
+      "name": "Raju",
       "email": "raju@gmail.com",
-      "cellNo":"123456789",
+      "cellNo": "123456789",
       "location": {
-        "id": "0"
+        "id": "0",
+        "name": "Dhanmondi",
+        "city": "Dhaka",
+        "state": "Dhaka",
+        "photo": "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+        "availableUnits": 4,
+        "wifi": true,
+        "laundry": true
       }
+    },
+    {
+      "id": 2,
+      "name": "Towhid",
+      "email": "Towhid@gmail.com",
+      "cellNo": "123456789",
+      "location": {
+        "id": "2",
+        "name": "Warm Beds Housing Support",
+        "city": "Juneau",
+        "state": "AK",
+        "photo": "https://angular.io/assets/images/tutorials/faa/i-do-nothing-but-love-lAyXdl1-Wmc-unsplash.jpg",
+        "availableUnits": 1,
+        "wifi": false,
+        "laundry": false
+      }
+    },
+    {
+      "id": "cf72",
+      "name": "fghgf",
+      "email": "hsstanvir@gmail.com",
+      "cellNo": "5464654",
+      "location": "Dhanmondi"
     }
-
   ]
-
 }

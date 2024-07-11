@@ -1,12 +1,23 @@
-import { Location } from "../location/location.model"
 
-
-export class StudentModel{
+export class StudentModel {
 
     id!: number;
     name!: string;
     email!: string;
     cellNo!: string;
-    location!: Location;
+    
+    
+    location!: {
+
+        id: string | undefined;
+        name: string | undefined;
+        city: string | undefined;
+        state: string | undefined;
+        photo: string | undefined;
+        availableUnits: number | undefined;
+        wifi: boolean | undefined;
+        laundry: boolean | undefined;
+
+    }
 
 }

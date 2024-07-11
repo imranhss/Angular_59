@@ -6,6 +6,7 @@ import { LocationComponent } from './location/location.component';
 import { CreatelocationComponent } from './createlocation/createlocation.component';
 import { UpdatelocationComponent } from './updatelocation/updatelocation.component';
 import { ViewstudentComponent } from './student/viewstudent/viewstudent.component';
+import { CreatestudentComponent } from './student/createstudent/createstudent.component';
 
 const routes: Routes = [
 
@@ -15,6 +16,7 @@ const routes: Routes = [
 {path: 'createlocation', component:CreatelocationComponent},
 {path: 'updatelocation/:id', component:UpdatelocationComponent},
 {path: 'student', component:ViewstudentComponent},
+{path: 'createstudent', component:CreatestudentComponent},
 
 ];
 
