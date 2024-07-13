@@ -31,4 +31,17 @@ export class StudentserviceService {
   }
 
 
+  updateStudent(student: StudentModel): Observable<StudentModel> {
+    return this.http.put<StudentModel>(`${this.baseUrl}${student.id}`, student);
+  }
+
+  deleteStudent(studentId: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}${studentId}`);
+    //return this.http.delete<void>(this.baseUrl+studentId);
+  }
+  getStudentById(studentId: number): Observable<StudentModel> {
+    // const url = `${this.baseUrl}/${studentId}`;
+    return this.http.get<StudentModel>(`${this.baseUrl}/${studentId}`);
+  }
+
 }

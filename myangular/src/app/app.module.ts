@@ -12,6 +12,7 @@ import { UpdatelocationComponent } from './updatelocation/updatelocation.compone
 import { ViewstudentComponent } from './student/viewstudent/viewstudent.component';
 import { CreatestudentComponent } from './student/createstudent/createstudent.component';
 import { UpdatestudentComponent } from './student/updatestudent/updatestudent.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import { UpdatestudentComponent } from './student/updatestudent/updatestudent.co
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule, 
+    AppRoutingModule 
   ],
   providers: [
     provideClientHydration(),

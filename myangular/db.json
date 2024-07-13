@@ -33,7 +33,7 @@
   ],
   "students": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Raju",
       "email": "raju@gmail.com",
       "cellNo": "123456789",
@@ -49,7 +49,7 @@
       }
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Towhid",
       "email": "Towhid@gmail.com",
       "cellNo": "123456789",
@@ -65,11 +65,52 @@
       }
     },
     {
-      "id": "cf72",
-      "name": "fghgf",
-      "email": "hsstanvir@gmail.com",
-      "cellNo": "5464654",
-      "location": "Dhanmondi"
+      "id": "fc94",
+      "name": "dd",
+      "email": "dds@gmail.com",
+      "cellNo": "dd",
+      "location": {
+        "id": "0",
+        "name": "Dhanmondi",
+        "city": "Dhaka",
+        "state": "Dhaka",
+        "photo": "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+        "availableUnits": 4,
+        "wifi": true,
+        "laundry": true
+      }
+    },
+    {
+      "id": "f48f",
+      "name": "aa",
+      "email": "aa@gmail.com",
+      "cellNo": "aa",
+      "location": {
+        "id": "1",
+        "name": "Khilgaon",
+        "city": "Dhaka",
+        "state": "Dhaka",
+        "photo": "https://angular.io/assets/images/tutorials/faa/brandon-griggs-wR11KBaB86U-unsplash.jpg",
+        "availableUnits": 0,
+        "wifi": true,
+        "laundry": true
+      }
+    },
+    {
+      "id": "70bf",
+      "name": "bb",
+      "email": "b@gmail.com",
+      "cellNo": "bb",
+      "location": {
+        "id": "1",
+        "name": "Khilgaon",
+        "city": "Dhaka",
+        "state": "Dhaka",
+        "photo": "https://angular.io/assets/images/tutorials/faa/brandon-griggs-wR11KBaB86U-unsplash.jpg",
+        "availableUnits": 0,
+        "wifi": true,
+        "laundry": true
+      }
     }
   ]
 }
