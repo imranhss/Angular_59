@@ -41,7 +41,7 @@ export class ViewstudentComponent implements OnInit {
     });
   }
 
-  deleteStudent(studentId: number): void {
+  deleteStudent(studentId: string): void {
     this.studentService.deleteStudent(studentId).subscribe({
       next: res => {
         this.loadData(); // Refresh the list after deletion

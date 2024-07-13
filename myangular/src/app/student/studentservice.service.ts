@@ -35,13 +35,13 @@ export class StudentserviceService {
     return this.http.put<StudentModel>(`${this.baseUrl}${student.id}`, student);
   }
 
-  deleteStudent(studentId: number): Observable<void> {
+  deleteStudent(studentId: string): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}${studentId}`);
     //return this.http.delete<void>(this.baseUrl+studentId);
   }
-  getStudentById(studentId: number): Observable<StudentModel> {
+  getStudentById(studentId: string): Observable<StudentModel> {
     // const url = `${this.baseUrl}/${studentId}`;
-    return this.http.get<StudentModel>(`${this.baseUrl}/${studentId}`);
+    return this.http.get<StudentModel>(`${this.baseUrl}${studentId}`);
   }
 
 }

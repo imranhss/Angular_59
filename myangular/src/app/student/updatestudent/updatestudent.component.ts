@@ -17,7 +17,7 @@ export class UpdatestudentComponent {
 
   studentForm!: FormGroup;
   locations: Location[] = [];
-  studentId: number = 0;
+  studentId: string = "";
   student: StudentModel = new StudentModel();
 
   constructor(
@@ -26,14 +26,19 @@ export class UpdatestudentComponent {
     private route: ActivatedRoute,
     private locationService: LocationService,
     private studentService: StudentserviceService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.studentId = Number(this.route.snapshot.paramMap.get('id'));
+   
+
+     this.studentId= this.route.snapshot.params['id'];
+
+
+    console.log(this.studentId);
 
     this.studentForm = this.formBuilder.group({
-      name: ['' ],
-      email: ['' ],
+      name: [''],
+      email: [''],
       cellNo: [''],
       location: this.formBuilder.group({
         id: [undefined],
@@ -53,7 +58,7 @@ export class UpdatestudentComponent {
 
   loadLocation(): void {
     this.locationService.getLocationForStudent().subscribe({
-      next: res => {
+      next: (res: Location[]) => {
         this.locations = res;
       },
       error: err => {
@@ -80,21 +85,21 @@ export class UpdatestudentComponent {
   }
 
   updateStudent(): void {
-    
-      const updatedStudent: StudentModel = {
-        ...this.student,
-        ...this.studentForm.value
-      };
-      this.studentService.updateStudent(updatedStudent).subscribe({
-        next: res => {
-          console.log('Student updated successfully:', res);
-          this.router.navigate(['student']); // Navigate to the students list after update
-        },
-        error: err => {
-          console.log('Error updating student:', err);
-        }
-      });
-    
+
+    const updatedStudent: StudentModel = {
+      ...this.student,
+      ...this.studentForm.value
+    };
+    this.studentService.updateStudent(updatedStudent).subscribe({
+      next: res => {
+        console.log('Student updated successfully:', res);
+        this.router.navigate(['student']); // Navigate to the students list after update
+      },
+      error: err => {
+        console.log('Error updating student:', err);
+      }
+    });
+
   }
 
 }

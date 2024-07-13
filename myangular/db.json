@@ -35,7 +35,7 @@
     {
       "id": "1",
       "name": "Raju",
-      "email": "raju@gmail.com",
+      "email": "raju55@gmail.com",
       "cellNo": "123456789",
       "location": {
         "id": "0",
@@ -85,22 +85,6 @@
       "name": "aa",
       "email": "aa@gmail.com",
       "cellNo": "aa",
-      "location": {
-        "id": "1",
-        "name": "Khilgaon",
-        "city": "Dhaka",
-        "state": "Dhaka",
-        "photo": "https://angular.io/assets/images/tutorials/faa/brandon-griggs-wR11KBaB86U-unsplash.jpg",
-        "availableUnits": 0,
-        "wifi": true,
-        "laundry": true
-      }
-    },
-    {
-      "id": "70bf",
-      "name": "bb",
-      "email": "b@gmail.com",
-      "cellNo": "bb",
       "location": {
         "id": "1",
         "name": "Khilgaon",
