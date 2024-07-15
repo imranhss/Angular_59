@@ -1,11 +1,25 @@
 {
+  "user": [
+    {
+      "id": "1",
+      "name": "Raju Ahmed",
+      "email": "raju@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "89cf",
+      "name": "Muhammad Emran Hossain",
+      "email": "hsstanvir@gmail.com",
+      "password": "123456789"
+    }
+  ],
   "locations": [
     {
       "id": "0",
       "name": "Dhanmondi",
       "city": "Dhaka",
       "state": "Dhaka",
-      "photo": "https://angular.io/assets/images/tutorials/faa/bernard-hermant-CLKGGwIBTaY-unsplash.jpg",
+      "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXhpgeCdZS9TVcKeA8UdnSI8FX1vz8l-cufA&s",
       "availableUnits": 4,
       "wifi": true,
       "laundry": true

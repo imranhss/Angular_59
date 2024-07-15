@@ -13,6 +13,8 @@ import { ViewstudentComponent } from './student/viewstudent/viewstudent.componen
 import { CreatestudentComponent } from './student/createstudent/createstudent.component';
 import { UpdatestudentComponent } from './student/updatestudent/updatestudent.component';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { RouterModule } from '@angular/router';
     UpdatelocationComponent,
     ViewstudentComponent,
     CreatestudentComponent,
-    UpdatestudentComponent,     
+    UpdatestudentComponent,
+    LoginComponent,
+    RegistrationComponent,     
   ],
 
   imports: [

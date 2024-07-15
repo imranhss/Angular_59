@@ -1,7 +1,7 @@
 
 export class StudentModel {
 
-    id!: number;
+    id!: string;
     name!: string;
     email!: string;
     cellNo!: string;
