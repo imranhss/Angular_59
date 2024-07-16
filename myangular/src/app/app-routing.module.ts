@@ -10,19 +10,28 @@ import { CreatestudentComponent } from './student/createstudent/createstudent.co
 import { UpdatestudentComponent } from './student/updatestudent/updatestudent.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guard/authguard.guard';
+import { HomeComponent } from './home/home.component';
+import { LogoutComponent } from './logout/logout.component';
+
 
 const routes: Routes = [
 
 
 {path: 'employee', component:EmployeeComponent},
 {path: 'location', component:LocationComponent},
-{path: 'createlocation', component:CreatelocationComponent},
-{path: 'updatelocation/:id', component:UpdatelocationComponent},
+{path: 'createlocation', component:CreatelocationComponent, canActivate:[AuthGuard]},
+{path: 'updatelocation/:id', component:UpdatelocationComponent, canActivate:[AuthGuard]},
 {path: 'student', component:ViewstudentComponent},
 {path: 'createstudent', component:CreatestudentComponent},
 {path: 'updatestudent/:id', component:UpdatestudentComponent},
 {path: 'reg', component:RegistrationComponent},
 {path: 'login', component:LoginComponent},
+{path: 'home', component:HomeComponent},
+{path: 'logout', component:LogoutComponent},
+{path: '**', redirectTo: 'login', pathMatch: 'full' },
+
+
 
 ];
 
