@@ -32,7 +32,7 @@ export class LoginComponent {
         next: (res) => {
           console.log('User logged in successfully:', res);
           this.authService.storeToken(res.token);
-          this.router.navigate(['home']); // Navigate to a protected route after login
+          this.router.navigate(['userprofile']); // Navigate to a protected route after login
         },
         error: (err) => {
           console.error('Error logging in:', err);
