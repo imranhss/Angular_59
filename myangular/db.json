@@ -4,13 +4,22 @@
       "id": "1",
       "name": "Raju Ahmed",
       "email": "raju@gmail.com",
-      "password": "123456"
+      "password": "123456",
+      "role": "User"
     },
     {
       "id": "89cf",
       "name": "Muhammad Emran Hossain",
       "email": "hsstanvir@gmail.com",
-      "password": "123456789"
+      "password": "123456789",
+      "role": "Admin"
+    },
+    {
+      "id": "89cf",
+      "name": "Muhammad Emran Hossain",
+      "email": "hss@gmail.com",
+      "password": "123456",
+      "role": "Admin"
     }
   ],
   "locations": [
